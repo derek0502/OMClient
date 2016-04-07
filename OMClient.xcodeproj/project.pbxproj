@@ -77,9 +77,9 @@
 		2DC2437D1CB5F83A0048708B /* OMClient */ = {
 			isa = PBXGroup;
 			children = (
-				2DC243A51CB60CB20048708B /* Search */,
 				2DC2439D1CB604DD0048708B /* Base */,
 				2DC243971CB5FF070048708B /* Shared */,
+				2DC243A51CB60CB20048708B /* Search */,
 				2DC243811CB5F83A0048708B /* AppDelegate.h */,
 				2DC243821CB5F83A0048708B /* AppDelegate.m */,
 				2DC243841CB5F83A0048708B /* ViewController.h */,

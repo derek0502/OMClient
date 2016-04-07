@@ -8,8 +8,6 @@
 
 #import "OMCAPIManager.h"
 
-#import "OMCSearchModel.h"
-
 @implementation OMCAPIManager
 
 + (NSURLSessionTask *)taskWithURL:(NSString *)urlString
