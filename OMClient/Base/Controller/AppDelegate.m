@@ -31,6 +31,16 @@
 		 
 	 }];
 
+	[OMCAPIManager searchDetailWithId:@"tt0096895"
+							  success:^(NSData *data, OMCMovieDetailModel *dataModel)
+	{
+
+	}
+							  failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
+	{
+
+	}];
+
     return YES;
 }
 

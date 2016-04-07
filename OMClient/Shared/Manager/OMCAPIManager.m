@@ -104,7 +104,6 @@ static NSString *kAPIEndpoint = @"http://www.omdbapi.com/";
 	return [OMCAPIManager taskWithUrl:components.URL
 							  success:^(NSData *data, OMCAPIModel *dataModel)
 			{
-
 				if (success) {
 
 					OMCSearchModel *model = [[OMCSearchModel alloc] initWithData:data error:nil];
@@ -112,6 +111,29 @@ static NSString *kAPIEndpoint = @"http://www.omdbapi.com/";
 				}
 			}
 							  failure:failure];
+}
+
+#pragma mark - Movie detail by ID
+
++ (NSURLSessionTask *)searchDetailWithId:(NSString *)imdbID
+							  success:(MovieDetailSuccessBlock)success
+							  failure:(BaseTaskFailureBlock)failure
+{
+	NSURLComponents *components = [NSURLComponents componentsWithString:kAPIEndpoint];
+	NSURLQueryItem *searchItem = [NSURLQueryItem queryItemWithName:@"i" value:imdbID];
+	components.queryItems = @[searchItem];
+	
+	return [OMCAPIManager taskWithUrl:components.URL
+							  success:^(NSData *data, OMCAPIModel *dataModel)
+			{
+				if (success) {
+					
+					OMCMovieDetailModel *model = [[OMCMovieDetailModel alloc] initWithData:data error:nil];
+					success(data, model);
+				}
+			}
+							  failure:failure];
+	
 }
 
 @end

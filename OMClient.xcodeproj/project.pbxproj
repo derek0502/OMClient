@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D3536861CB6BB2000BB6C9B /* OMCMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536851CB6BB2000BB6C9B /* OMCMovie.m */; };
+		2D35368A1CB6C55D00BB6C9B /* OMCMovieDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536891CB6C55D00BB6C9B /* OMCMovieDetailModel.m */; };
 		2DC243801CB5F83A0048708B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2437F1CB5F83A0048708B /* main.m */; };
 		2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438A1CB5F83A0048708B /* Assets.xcassets */; };
 		2DC2439B1CB5FF950048708B /* OMCAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2439A1CB5FF950048708B /* OMCAPIManager.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2D3536841CB6BB2000BB6C9B /* OMCMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCMovie.h; path = Search/Model/OMCMovie.h; sourceTree = "<group>"; };
 		2D3536851CB6BB2000BB6C9B /* OMCMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCMovie.m; path = Search/Model/OMCMovie.m; sourceTree = "<group>"; };
+		2D3536881CB6C55D00BB6C9B /* OMCMovieDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCMovieDetailModel.h; path = Search/Model/OMCMovieDetailModel.h; sourceTree = "<group>"; };
+		2D3536891CB6C55D00BB6C9B /* OMCMovieDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCMovieDetailModel.m; path = Search/Model/OMCMovieDetailModel.m; sourceTree = "<group>"; };
 		2DC2437B1CB5F83A0048708B /* OMClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC2437F1CB5F83A0048708B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DC2438A1CB5F83A0048708B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 			children = (
 				2D3536841CB6BB2000BB6C9B /* OMCMovie.h */,
 				2D3536851CB6BB2000BB6C9B /* OMCMovie.m */,
+				2D3536881CB6C55D00BB6C9B /* OMCMovieDetailModel.h */,
+				2D3536891CB6C55D00BB6C9B /* OMCMovieDetailModel.m */,
 				2DC243A71CB60D040048708B /* OMCSearchModel.h */,
 				2DC243A81CB60D040048708B /* OMCSearchModel.m */,
 			);
@@ -316,6 +321,7 @@
 				2DC243A41CB6059D0048708B /* OMCAPIModel.m in Sources */,
 				2DC243B21CB63DAF0048708B /* AppDelegate.m in Sources */,
 				2DC2439B1CB5FF950048708B /* OMCAPIManager.m in Sources */,
+				2D35368A1CB6C55D00BB6C9B /* OMCMovieDetailModel.m in Sources */,
 				2DC243801CB5F83A0048708B /* main.m in Sources */,
 				2DC243B31CB63DAF0048708B /* OMCBaseModel.m in Sources */,
 				2DC243A91CB60D040048708B /* OMCSearchModel.m in Sources */,
