@@ -8,8 +8,12 @@
 
 #import "OMCAPIModel.h"
 
+// Model
+#import "OMCMovie.h"
+
 @interface OMCSearchModel : OMCAPIModel
 
 @property (nonatomic, assign) NSInteger totalResults;
+@property (nonatomic, strong) NSArray<OMCMovie> *movies;
 
 @end

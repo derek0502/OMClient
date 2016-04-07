@@ -10,14 +10,26 @@
 
 // Model
 #import "OMCAPIModel.h"
+#import "OMCSearchModel.h"
 
 typedef void (^BaseTaskSuccessBlock)(NSData *data, OMCAPIModel *dataModel);
 typedef void (^BaseTaskFailureBlock)(NSData *data, NSError *error, OMCAPIModel *dataModel);
 
+typedef void (^TitleSearchSuccessBlock)(NSData *data, OMCSearchModel *dataModel);
+
 @interface OMCAPIManager : NSObject
 
-+ (NSURLSessionTask *)taskWithURL:(NSString *)urlString
+#pragma mark - General
+
++ (NSURLSessionTask *)taskWithUrl:(NSURL *)url
                           success:(BaseTaskSuccessBlock)success
                           failure:(BaseTaskFailureBlock)failure;
+
+#pragma mark - Search by title
+
++ (NSURLSessionTask *)searchWithTitle:(NSString *)title
+								 page:(NSInteger)page
+							  success:(TitleSearchSuccessBlock)success
+							  failure:(BaseTaskFailureBlock)failure;
 
 @end

@@ -10,4 +10,13 @@
 
 @implementation OMCSearchModel
 
+#pragma mark - Override
+
++ (JSONKeyMapper *)keyMapper
+{
+	return [JSONKeyMapper mapper:[super keyMapper] withExceptions:@{
+																	@"Search" : @"movies"
+																	}];
+}
+
 @end

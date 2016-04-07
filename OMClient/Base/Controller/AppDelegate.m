@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "OMCAPIManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+	[OMCAPIManager searchWithTitle:@"batman"
+							  page:2
+						   success:^(NSData *data, OMCSearchModel *dataModel)
+	 {
+		 
+	 }
+						   failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
+	 {
+		 
+	 }];
+
     return YES;
 }
 
