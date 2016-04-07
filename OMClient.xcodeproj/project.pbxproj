@@ -13,6 +13,10 @@
 		2DC243891CB5F83A0048708B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC243871CB5F83A0048708B /* Main.storyboard */; };
 		2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438A1CB5F83A0048708B /* Assets.xcassets */; };
 		2DC2438E1CB5F83A0048708B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438C1CB5F83A0048708B /* LaunchScreen.storyboard */; };
+		2DC2439B1CB5FF950048708B /* OMCAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2439A1CB5FF950048708B /* OMCAPIManager.m */; };
+		2DC243A11CB6050F0048708B /* OMCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243A01CB6050F0048708B /* OMCBaseModel.m */; };
+		2DC243A41CB6059D0048708B /* OMCAPIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243A31CB6059D0048708B /* OMCAPIModel.m */; };
+		2DC243A91CB60D040048708B /* OMCSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243A81CB60D040048708B /* OMCSearchModel.m */; };
 		3A4D1FDBA92B9CB8AB9CD3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,14 @@
 		2DC2438A1CB5F83A0048708B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DC2438D1CB5F83A0048708B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DC2438F1CB5F83A0048708B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DC243991CB5FF950048708B /* OMCAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCAPIManager.h; path = Shared/Manager/OMCAPIManager.h; sourceTree = "<group>"; };
+		2DC2439A1CB5FF950048708B /* OMCAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCAPIManager.m; path = Shared/Manager/OMCAPIManager.m; sourceTree = "<group>"; };
+		2DC2439F1CB6050F0048708B /* OMCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCBaseModel.h; path = Base/Model/OMCBaseModel.h; sourceTree = "<group>"; };
+		2DC243A01CB6050F0048708B /* OMCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCBaseModel.m; path = Base/Model/OMCBaseModel.m; sourceTree = "<group>"; };
+		2DC243A21CB6059D0048708B /* OMCAPIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCAPIModel.h; path = Shared/Model/OMCAPIModel.h; sourceTree = "<group>"; };
+		2DC243A31CB6059D0048708B /* OMCAPIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCAPIModel.m; path = Shared/Model/OMCAPIModel.m; sourceTree = "<group>"; };
+		2DC243A71CB60D040048708B /* OMCSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCSearchModel.h; path = Search/Model/OMCSearchModel.h; sourceTree = "<group>"; };
+		2DC243A81CB60D040048708B /* OMCSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCSearchModel.m; path = Search/Model/OMCSearchModel.m; sourceTree = "<group>"; };
 		75FDDE6991720192C2C21C89 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F608D60C4044E14267A0F58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +77,9 @@
 		2DC2437D1CB5F83A0048708B /* OMClient */ = {
 			isa = PBXGroup;
 			children = (
+				2DC243A51CB60CB20048708B /* Search */,
+				2DC2439D1CB604DD0048708B /* Base */,
+				2DC243971CB5FF070048708B /* Shared */,
 				2DC243811CB5F83A0048708B /* AppDelegate.h */,
 				2DC243821CB5F83A0048708B /* AppDelegate.m */,
 				2DC243841CB5F83A0048708B /* ViewController.h */,
@@ -84,6 +99,67 @@
 				2DC2437F1CB5F83A0048708B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DC243971CB5FF070048708B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2439C1CB604B90048708B /* Model */,
+				2DC243981CB5FF110048708B /* Manager */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		2DC243981CB5FF110048708B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2DC243991CB5FF950048708B /* OMCAPIManager.h */,
+				2DC2439A1CB5FF950048708B /* OMCAPIManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		2DC2439C1CB604B90048708B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC243A21CB6059D0048708B /* OMCAPIModel.h */,
+				2DC243A31CB6059D0048708B /* OMCAPIModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2DC2439D1CB604DD0048708B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2439E1CB604E40048708B /* Model */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		2DC2439E1CB604E40048708B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2439F1CB6050F0048708B /* OMCBaseModel.h */,
+				2DC243A01CB6050F0048708B /* OMCBaseModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2DC243A51CB60CB20048708B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2DC243A61CB60CBA0048708B /* Model */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		2DC243A61CB60CBA0048708B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC243A71CB60D040048708B /* OMCSearchModel.h */,
+				2DC243A81CB60D040048708B /* OMCSearchModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		79779CB6A35DA3D5BC520B07 /* Frameworks */ = {
@@ -132,6 +208,7 @@
 		2DC243731CB5F83A0048708B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OMC;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Derek Cheung";
 				TargetAttributes = {
@@ -224,9 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC243A11CB6050F0048708B /* OMCBaseModel.m in Sources */,
 				2DC243861CB5F83A0048708B /* ViewController.m in Sources */,
+				2DC243A41CB6059D0048708B /* OMCAPIModel.m in Sources */,
 				2DC243831CB5F83A0048708B /* AppDelegate.m in Sources */,
+				2DC2439B1CB5FF950048708B /* OMCAPIManager.m in Sources */,
 				2DC243801CB5F83A0048708B /* main.m in Sources */,
+				2DC243A91CB60D040048708B /* OMCSearchModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

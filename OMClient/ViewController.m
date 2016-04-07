@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "OMCAPIManager.h"
+
 @interface ViewController ()
 
 @end
@@ -17,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [OMCAPIManager taskWithURL:@"http://www.omdbapi.com/?s=batman&type=movie"
+                       success:^(NSData *data, OMCAPIModel *dataModel)
+     {
+         
+     }
+                       failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
+     {
+         
+     }];
 }
 
 - (void)didReceiveMemoryWarning {
