@@ -20,6 +20,9 @@ typedef void (^TitleSearchSuccessBlock)(NSData *data, OMCSearchModel *dataModel)
 
 typedef void (^MovieDetailSuccessBlock)(NSData *data, OMCMovieDetailModel *dataModel);
 
+typedef void (^DownloadImageSuccessBlock)(NSData *imageData);
+typedef void (^DownloadImageFailureBlock)(NSData *data, NSError *error);
+
 @interface OMCAPIManager : NSObject
 
 #pragma mark - General
@@ -40,5 +43,11 @@ typedef void (^MovieDetailSuccessBlock)(NSData *data, OMCMovieDetailModel *dataM
 + (NSURLSessionTask *)searchDetailWithId:(NSString *)imdbID
 							  success:(MovieDetailSuccessBlock)success
 							  failure:(BaseTaskFailureBlock)failure;
+
+#pragma mark - Download image by URL
+
++ (NSURLSessionTask *)downloadImageWithUrl:(NSString *)url
+                                   success:(DownloadImageSuccessBlock)success
+                                   failure:(DownloadImageFailureBlock)failure;
 
 @end

@@ -40,6 +40,16 @@
 	{
 
 	}];
+    
+    [OMCAPIManager downloadImageWithUrl:@"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUdsMTI3.jpg"
+                                success:^(NSData *imageData)
+    {
+        
+    }
+                                failure:^(NSData *data, NSError *error)
+    {
+        
+    }];
 
     return YES;
 }
