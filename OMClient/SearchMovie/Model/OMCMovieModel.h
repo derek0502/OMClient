@@ -1,5 +1,5 @@
 //
-//  OMCMovie.h
+//  OMCMovieModel.h
 //  OMClient
 //
 //  Created by Derek Cheung on 7/4/2016.
@@ -8,10 +8,10 @@
 
 #import "OMCBaseModel.h"
 
-@protocol OMCMovie
+@protocol OMCMovieModel
 @end
 
-@interface OMCMovie : OMCBaseModel
+@interface OMCMovieModel : OMCBaseModel
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) NSInteger year;

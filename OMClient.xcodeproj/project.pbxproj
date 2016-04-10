@@ -7,39 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D3536861CB6BB2000BB6C9B /* OMCMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536851CB6BB2000BB6C9B /* OMCMovie.m */; };
-		2D35368A1CB6C55D00BB6C9B /* OMCMovieDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536891CB6C55D00BB6C9B /* OMCMovieDetailModel.m */; };
+		2D3536941CBA760300BB6C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D35368B1CBA760300BB6C9B /* AppDelegate.m */; };
+		2D3536981CBA763400BB6C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3536971CBA763400BB6C9B /* LaunchScreen.storyboard */; };
+		2D3536B11CBA76E900BB6C9B /* OMCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D35369E1CBA76E900BB6C9B /* OMCBaseModel.m */; };
+		2D3536B21CBA76E900BB6C9B /* OMCMovieDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536A31CBA76E900BB6C9B /* OMCMovieDetailModel.m */; };
+		2D3536B31CBA76E900BB6C9B /* OMCMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536A71CBA76E900BB6C9B /* OMCMovieModel.m */; };
+		2D3536B41CBA76E900BB6C9B /* OMCSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536A91CBA76E900BB6C9B /* OMCSearchModel.m */; };
+		2D3536E71CBA77C200BB6C9B /* OMCAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536E31CBA77C200BB6C9B /* OMCAPIManager.m */; };
+		2D3536E81CBA77C200BB6C9B /* OMCAPIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536E61CBA77C200BB6C9B /* OMCAPIModel.m */; };
 		2DC243801CB5F83A0048708B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2437F1CB5F83A0048708B /* main.m */; };
 		2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438A1CB5F83A0048708B /* Assets.xcassets */; };
-		2DC2439B1CB5FF950048708B /* OMCAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2439A1CB5FF950048708B /* OMCAPIManager.m */; };
-		2DC243A41CB6059D0048708B /* OMCAPIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243A31CB6059D0048708B /* OMCAPIModel.m */; };
-		2DC243A91CB60D040048708B /* OMCSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243A81CB60D040048708B /* OMCSearchModel.m */; };
-		2DC243B21CB63DAF0048708B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243AE1CB63DAF0048708B /* AppDelegate.m */; };
-		2DC243B31CB63DAF0048708B /* OMCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243B11CB63DAF0048708B /* OMCBaseModel.m */; };
-		2DC243B71CB63E6C0048708B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC243B61CB63E6C0048708B /* LaunchScreen.storyboard */; };
 		3A4D1FDBA92B9CB8AB9CD3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D3536841CB6BB2000BB6C9B /* OMCMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCMovie.h; path = Search/Model/OMCMovie.h; sourceTree = "<group>"; };
-		2D3536851CB6BB2000BB6C9B /* OMCMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCMovie.m; path = Search/Model/OMCMovie.m; sourceTree = "<group>"; };
-		2D3536881CB6C55D00BB6C9B /* OMCMovieDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCMovieDetailModel.h; path = Search/Model/OMCMovieDetailModel.h; sourceTree = "<group>"; };
-		2D3536891CB6C55D00BB6C9B /* OMCMovieDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCMovieDetailModel.m; path = Search/Model/OMCMovieDetailModel.m; sourceTree = "<group>"; };
+		2D35368B1CBA760300BB6C9B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2D3536931CBA760300BB6C9B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2D3536971CBA763400BB6C9B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2D35369D1CBA76E900BB6C9B /* OMCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCBaseModel.h; sourceTree = "<group>"; };
+		2D35369E1CBA76E900BB6C9B /* OMCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCBaseModel.m; sourceTree = "<group>"; };
+		2D3536A21CBA76E900BB6C9B /* OMCMovieDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCMovieDetailModel.h; sourceTree = "<group>"; };
+		2D3536A31CBA76E900BB6C9B /* OMCMovieDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCMovieDetailModel.m; sourceTree = "<group>"; };
+		2D3536A61CBA76E900BB6C9B /* OMCMovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCMovieModel.h; sourceTree = "<group>"; };
+		2D3536A71CBA76E900BB6C9B /* OMCMovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCMovieModel.m; sourceTree = "<group>"; };
+		2D3536A81CBA76E900BB6C9B /* OMCSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCSearchModel.h; sourceTree = "<group>"; };
+		2D3536A91CBA76E900BB6C9B /* OMCSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCSearchModel.m; sourceTree = "<group>"; };
+		2D3536E21CBA77C200BB6C9B /* OMCAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCAPIManager.h; sourceTree = "<group>"; };
+		2D3536E31CBA77C200BB6C9B /* OMCAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCAPIManager.m; sourceTree = "<group>"; };
+		2D3536E51CBA77C200BB6C9B /* OMCAPIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCAPIModel.h; sourceTree = "<group>"; };
+		2D3536E61CBA77C200BB6C9B /* OMCAPIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCAPIModel.m; sourceTree = "<group>"; };
 		2DC2437B1CB5F83A0048708B /* OMClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC2437F1CB5F83A0048708B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DC2438A1CB5F83A0048708B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DC2438F1CB5F83A0048708B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DC243991CB5FF950048708B /* OMCAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCAPIManager.h; path = Shared/Manager/OMCAPIManager.h; sourceTree = "<group>"; };
-		2DC2439A1CB5FF950048708B /* OMCAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCAPIManager.m; path = Shared/Manager/OMCAPIManager.m; sourceTree = "<group>"; };
-		2DC243A21CB6059D0048708B /* OMCAPIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCAPIModel.h; path = Shared/Model/OMCAPIModel.h; sourceTree = "<group>"; };
-		2DC243A31CB6059D0048708B /* OMCAPIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCAPIModel.m; path = Shared/Model/OMCAPIModel.m; sourceTree = "<group>"; };
-		2DC243A71CB60D040048708B /* OMCSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCSearchModel.h; path = Search/Model/OMCSearchModel.h; sourceTree = "<group>"; };
-		2DC243A81CB60D040048708B /* OMCSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCSearchModel.m; path = Search/Model/OMCSearchModel.m; sourceTree = "<group>"; };
-		2DC243AD1CB63DAF0048708B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2DC243AE1CB63DAF0048708B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2DC243B01CB63DAF0048708B /* OMCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCBaseModel.h; sourceTree = "<group>"; };
-		2DC243B11CB63DAF0048708B /* OMCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCBaseModel.m; sourceTree = "<group>"; };
-		2DC243B61CB63E6C0048708B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = View/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75FDDE6991720192C2C21C89 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F608D60C4044E14267A0F58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +57,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D35369A1CBA76E900BB6C9B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2D35369B1CBA76E900BB6C9B /* Controller */,
+				2D35369C1CBA76E900BB6C9B /* Model */,
+				2D35369F1CBA76E900BB6C9B /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2D35369B1CBA76E900BB6C9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D35369C1CBA76E900BB6C9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D35369D1CBA76E900BB6C9B /* OMCBaseModel.h */,
+				2D35369E1CBA76E900BB6C9B /* OMCBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D35369F1CBA76E900BB6C9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D3536A01CBA76E900BB6C9B /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536A11CBA76E900BB6C9B /* Model */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		2D3536A11CBA76E900BB6C9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536A21CBA76E900BB6C9B /* OMCMovieDetailModel.h */,
+				2D3536A31CBA76E900BB6C9B /* OMCMovieDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D3536A41CBA76E900BB6C9B /* SearchMovie */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536A51CBA76E900BB6C9B /* Model */,
+			);
+			path = SearchMovie;
+			sourceTree = "<group>";
+		};
+		2D3536A51CBA76E900BB6C9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536A61CBA76E900BB6C9B /* OMCMovieModel.h */,
+				2D3536A71CBA76E900BB6C9B /* OMCMovieModel.m */,
+				2D3536A81CBA76E900BB6C9B /* OMCSearchModel.h */,
+				2D3536A91CBA76E900BB6C9B /* OMCSearchModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D3536E01CBA77C200BB6C9B /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536E11CBA77C200BB6C9B /* Manager */,
+				2D3536E41CBA77C200BB6C9B /* Model */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		2D3536E11CBA77C200BB6C9B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536E21CBA77C200BB6C9B /* OMCAPIManager.h */,
+				2D3536E31CBA77C200BB6C9B /* OMCAPIManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2D3536E41CBA77C200BB6C9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D3536E51CBA77C200BB6C9B /* OMCAPIModel.h */,
+				2D3536E61CBA77C200BB6C9B /* OMCAPIModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2DC243721CB5F83A0048708B = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +174,13 @@
 		2DC2437D1CB5F83A0048708B /* OMClient */ = {
 			isa = PBXGroup;
 			children = (
-				2DC243AB1CB63DAF0048708B /* Base */,
-				2DC243A51CB60CB20048708B /* Search */,
-				2DC243971CB5FF070048708B /* Shared */,
+				2D3536931CBA760300BB6C9B /* AppDelegate.h */,
+				2D35368B1CBA760300BB6C9B /* AppDelegate.m */,
+				2D3536971CBA763400BB6C9B /* LaunchScreen.storyboard */,
+				2D35369A1CBA76E900BB6C9B /* Base */,
+				2D3536A01CBA76E900BB6C9B /* MovieDetail */,
+				2D3536A41CBA76E900BB6C9B /* SearchMovie */,
+				2D3536E01CBA77C200BB6C9B /* Share */,
 				2DC2437E1CB5F83A0048708B /* Supporting Files */,
 			);
 			path = OMClient;
@@ -94,90 +194,6 @@
 				2DC2437F1CB5F83A0048708B /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2DC243971CB5FF070048708B /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				2DC2439C1CB604B90048708B /* Model */,
-				2DC243981CB5FF110048708B /* Manager */,
-			);
-			name = Shared;
-			sourceTree = "<group>";
-		};
-		2DC243981CB5FF110048708B /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243991CB5FF950048708B /* OMCAPIManager.h */,
-				2DC2439A1CB5FF950048708B /* OMCAPIManager.m */,
-			);
-			name = Manager;
-			sourceTree = "<group>";
-		};
-		2DC2439C1CB604B90048708B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243A21CB6059D0048708B /* OMCAPIModel.h */,
-				2DC243A31CB6059D0048708B /* OMCAPIModel.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		2DC243A51CB60CB20048708B /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243A61CB60CBA0048708B /* Model */,
-			);
-			name = Search;
-			sourceTree = "<group>";
-		};
-		2DC243A61CB60CBA0048708B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2D3536841CB6BB2000BB6C9B /* OMCMovie.h */,
-				2D3536851CB6BB2000BB6C9B /* OMCMovie.m */,
-				2D3536881CB6C55D00BB6C9B /* OMCMovieDetailModel.h */,
-				2D3536891CB6C55D00BB6C9B /* OMCMovieDetailModel.m */,
-				2DC243A71CB60D040048708B /* OMCSearchModel.h */,
-				2DC243A81CB60D040048708B /* OMCSearchModel.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		2DC243AB1CB63DAF0048708B /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243AC1CB63DAF0048708B /* Controller */,
-				2DC243AF1CB63DAF0048708B /* Model */,
-				2DC243B41CB63DBB0048708B /* View */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		2DC243AC1CB63DAF0048708B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243AD1CB63DAF0048708B /* AppDelegate.h */,
-				2DC243AE1CB63DAF0048708B /* AppDelegate.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2DC243AF1CB63DAF0048708B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243B01CB63DAF0048708B /* OMCBaseModel.h */,
-				2DC243B11CB63DAF0048708B /* OMCBaseModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2DC243B41CB63DBB0048708B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2DC243B61CB63E6C0048708B /* LaunchScreen.storyboard */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		79779CB6A35DA3D5BC520B07 /* Frameworks */ = {
@@ -259,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */,
-				2DC243B71CB63E6C0048708B /* LaunchScreen.storyboard in Resources */,
+				2D3536981CBA763400BB6C9B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,14 +334,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DC243A41CB6059D0048708B /* OMCAPIModel.m in Sources */,
-				2DC243B21CB63DAF0048708B /* AppDelegate.m in Sources */,
-				2DC2439B1CB5FF950048708B /* OMCAPIManager.m in Sources */,
-				2D35368A1CB6C55D00BB6C9B /* OMCMovieDetailModel.m in Sources */,
 				2DC243801CB5F83A0048708B /* main.m in Sources */,
-				2DC243B31CB63DAF0048708B /* OMCBaseModel.m in Sources */,
-				2DC243A91CB60D040048708B /* OMCSearchModel.m in Sources */,
-				2D3536861CB6BB2000BB6C9B /* OMCMovie.m in Sources */,
+				2D3536B11CBA76E900BB6C9B /* OMCBaseModel.m in Sources */,
+				2D3536E81CBA77C200BB6C9B /* OMCAPIModel.m in Sources */,
+				2D3536941CBA760300BB6C9B /* AppDelegate.m in Sources */,
+				2D3536B31CBA76E900BB6C9B /* OMCMovieModel.m in Sources */,
+				2D3536B21CBA76E900BB6C9B /* OMCMovieDetailModel.m in Sources */,
+				2D3536B41CBA76E900BB6C9B /* OMCSearchModel.m in Sources */,
+				2D3536E71CBA77C200BB6C9B /* OMCAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
