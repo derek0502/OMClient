@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIButton *clearButton;
 @property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIButton *dismissKeyboardButton;
 
 @end
 
@@ -31,6 +32,7 @@
 	[self setupClearButton];
 	[self setupSeparatorView];
 	[self setupTableView];
+	[self setupDismissKeyboardButton];
 }
 
 - (void)setupSearchContainerView
@@ -80,6 +82,16 @@
 	[self addSubview:_tableView];
 }
 
+- (void)setupDismissKeyboardButton
+{
+	_dismissKeyboardButton = [UIButton new];
+
+	_dismissKeyboardButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+	_dismissKeyboardButton.hidden = YES;
+
+	[self addSubview:_dismissKeyboardButton];
+}
+
 #pragma mark - Setup Constraints
 
 - (void)setupConstraints
@@ -91,6 +103,7 @@
 	[self setupClearButtonConstraints];
 	[self setupSeparatorViewConstraints];
 	[self setupTableViewConstraints];
+	[self setupDismissKeyboardButtonConstraints];
 }
 
 - (void)setupSearchContainerViewConstraints
@@ -139,6 +152,16 @@
 	[_tableView addLeftConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
 	[_tableView addRightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
 	[_tableView addBottomConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+}
+
+- (void)setupDismissKeyboardButtonConstraints
+{
+	_dismissKeyboardButton.translatesAutoresizingMaskIntoConstraints = NO;
+
+	[_dismissKeyboardButton addTopConstraintToView:_separatorView attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:0.0];
+	[_dismissKeyboardButton addLeftConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+	[_dismissKeyboardButton addRightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+	[_dismissKeyboardButton addBottomConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
 }
 
 @end

@@ -13,5 +13,7 @@
 @property (nonatomic, strong, readonly) UITextField *searchTextField;
 @property (nonatomic, strong, readonly) UIButton *clearButton;
 @property (nonatomic, strong, readonly) UITableView *tableView;
+@property (nonatomic, strong, readonly) UIButton *dismissKeyboardButton;
+
 
 @end
