@@ -20,6 +20,7 @@
 		2D3536F21CBA7B7900BB6C9B /* OMCBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */; };
 		2D3536F71CBA7C6D00BB6C9B /* OMCSearchMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536F61CBA7C6D00BB6C9B /* OMCSearchMovieViewController.m */; };
 		2D3536FA1CBA7C9200BB6C9B /* OMCSearchMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536F91CBA7C9200BB6C9B /* OMCSearchMovieView.m */; };
+		2D3536FD1CBA889F00BB6C9B /* OMCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536FC1CBA889F00BB6C9B /* OMCBaseTableViewCell.m */; };
 		2DC243801CB5F83A0048708B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2437F1CB5F83A0048708B /* main.m */; };
 		2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438A1CB5F83A0048708B /* Assets.xcassets */; };
 		3A4D1FDBA92B9CB8AB9CD3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */; };
@@ -51,6 +52,8 @@
 		2D3536F61CBA7C6D00BB6C9B /* OMCSearchMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCSearchMovieViewController.m; path = Controller/OMCSearchMovieViewController.m; sourceTree = "<group>"; };
 		2D3536F81CBA7C9200BB6C9B /* OMCSearchMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCSearchMovieView.h; sourceTree = "<group>"; };
 		2D3536F91CBA7C9200BB6C9B /* OMCSearchMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCSearchMovieView.m; sourceTree = "<group>"; };
+		2D3536FB1CBA889F00BB6C9B /* OMCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCBaseTableViewCell.h; sourceTree = "<group>"; };
+		2D3536FC1CBA889F00BB6C9B /* OMCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCBaseTableViewCell.m; sourceTree = "<group>"; };
 		2DC2437B1CB5F83A0048708B /* OMClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC2437F1CB5F83A0048708B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DC2438A1CB5F83A0048708B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 			children = (
 				2D3536F01CBA7B7900BB6C9B /* OMCBaseView.h */,
 				2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */,
+				2D3536FB1CBA889F00BB6C9B /* OMCBaseTableViewCell.h */,
+				2D3536FC1CBA889F00BB6C9B /* OMCBaseTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				2D3536B11CBA76E900BB6C9B /* OMCBaseModel.m in Sources */,
 				2D3536E81CBA77C200BB6C9B /* OMCAPIModel.m in Sources */,
 				2D3536F71CBA7C6D00BB6C9B /* OMCSearchMovieViewController.m in Sources */,
+				2D3536FD1CBA889F00BB6C9B /* OMCBaseTableViewCell.m in Sources */,
 				2D3536941CBA760300BB6C9B /* AppDelegate.m in Sources */,
 				2D3536B31CBA76E900BB6C9B /* OMCMovieModel.m in Sources */,
 				2D3536EC1CBA7A6000BB6C9B /* UIView+AutoLayoutHelper.m in Sources */,
