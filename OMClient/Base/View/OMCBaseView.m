@@ -35,14 +35,15 @@
 
 - (void)setup
 {
-	// Abstract method
+	// Override hook
+	self.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - Setup Constraints
 
 - (void)setupConstraints
 {
-	// Abstract method
+	// Override hook
 }
 
 @end
