@@ -16,6 +16,8 @@
 		2D3536E71CBA77C200BB6C9B /* OMCAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536E31CBA77C200BB6C9B /* OMCAPIManager.m */; };
 		2D3536E81CBA77C200BB6C9B /* OMCAPIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536E61CBA77C200BB6C9B /* OMCAPIModel.m */; };
 		2D3536EC1CBA7A6000BB6C9B /* UIView+AutoLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536EB1CBA7A6000BB6C9B /* UIView+AutoLayoutHelper.m */; };
+		2D3536EF1CBA7B5800BB6C9B /* OMCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536EE1CBA7B5800BB6C9B /* OMCBaseViewController.m */; };
+		2D3536F21CBA7B7900BB6C9B /* OMCBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */; };
 		2DC243801CB5F83A0048708B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2437F1CB5F83A0048708B /* main.m */; };
 		2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438A1CB5F83A0048708B /* Assets.xcassets */; };
 		3A4D1FDBA92B9CB8AB9CD3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */; };
@@ -39,6 +41,10 @@
 		2D3536E61CBA77C200BB6C9B /* OMCAPIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCAPIModel.m; sourceTree = "<group>"; };
 		2D3536EA1CBA7A6000BB6C9B /* UIView+AutoLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AutoLayoutHelper.h"; path = "Category/UIView+AutoLayoutHelper.h"; sourceTree = "<group>"; };
 		2D3536EB1CBA7A6000BB6C9B /* UIView+AutoLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AutoLayoutHelper.m"; path = "Category/UIView+AutoLayoutHelper.m"; sourceTree = "<group>"; };
+		2D3536ED1CBA7B5800BB6C9B /* OMCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCBaseViewController.h; sourceTree = "<group>"; };
+		2D3536EE1CBA7B5800BB6C9B /* OMCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCBaseViewController.m; sourceTree = "<group>"; };
+		2D3536F01CBA7B7900BB6C9B /* OMCBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMCBaseView.h; sourceTree = "<group>"; };
+		2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMCBaseView.m; sourceTree = "<group>"; };
 		2DC2437B1CB5F83A0048708B /* OMClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC2437F1CB5F83A0048708B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DC2438A1CB5F83A0048708B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 		2D35369B1CBA76E900BB6C9B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2D3536ED1CBA7B5800BB6C9B /* OMCBaseViewController.h */,
+				2D3536EE1CBA7B5800BB6C9B /* OMCBaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -89,6 +97,8 @@
 		2D35369F1CBA76E900BB6C9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2D3536F01CBA7B7900BB6C9B /* OMCBaseView.h */,
+				2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +358,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DC243801CB5F83A0048708B /* main.m in Sources */,
+				2D3536F21CBA7B7900BB6C9B /* OMCBaseView.m in Sources */,
+				2D3536EF1CBA7B5800BB6C9B /* OMCBaseViewController.m in Sources */,
 				2D3536B11CBA76E900BB6C9B /* OMCBaseModel.m in Sources */,
 				2D3536E81CBA77C200BB6C9B /* OMCAPIModel.m in Sources */,
 				2D3536941CBA760300BB6C9B /* AppDelegate.m in Sources */,
