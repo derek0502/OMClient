@@ -138,24 +138,24 @@ static NSString *kAPIEndpoint = @"http://www.omdbapi.com/";
 
 #pragma mark - Download image by URL
 
-+ (NSURLSessionTask *)downloadImageWithUrl:(NSString *)url
-                                   success:(DownloadImageSuccessBlock)success
-                                   failure:(DownloadImageFailureBlock)failure
++ (NSURLSessionDownloadTask *)downloadImageWithUrl:(NSString *)url
+										   success:(DownloadImageSuccessBlock)success
+										   failure:(DownloadImageFailureBlock)failure
 {
-    NSURLSessionDownloadTask *task = [[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:url]
-                                                                     completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                                      {
-                                          if (error) {    // Network level error
-                                              
-                                              if (failure) {
-                                                  
-                                                  failure(nil, error);
-                                              }
-                                              
+	NSURLSessionDownloadTask *task = [[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:url]
+																	 completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error)
+									  {
+										  if (error) {    // Network level error
+
+											  if (failure) {
+
+												  failure(nil, error);
+											  }
+
                                           } else {
-                                              
+
                                               NSData *imageData = [NSData dataWithContentsOfURL:location];
-                                              
+
                                               if (!imageData || [imageData length] == 0) {   // data level error
                                                   
                                                   if (failure) {

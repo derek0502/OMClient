@@ -22,6 +22,7 @@
 		2D3536FD1CBA889F00BB6C9B /* OMCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536FC1CBA889F00BB6C9B /* OMCBaseTableViewCell.m */; };
 		2D3537001CBA898800BB6C9B /* OMCMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3536FF1CBA898800BB6C9B /* OMCMovieCell.m */; };
 		2D3537031CBA899B00BB6C9B /* OMCSearchMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3537021CBA899B00BB6C9B /* OMCSearchMovieView.m */; };
+		2D3537071CBA96C300BB6C9B /* OMCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3537061CBA96C300BB6C9B /* OMCImageView.m */; };
 		2DC243801CB5F83A0048708B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2437F1CB5F83A0048708B /* main.m */; };
 		2DC2438B1CB5F83A0048708B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2438A1CB5F83A0048708B /* Assets.xcassets */; };
 		3A4D1FDBA92B9CB8AB9CD3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */; };
@@ -57,6 +58,8 @@
 		2D3536FF1CBA898800BB6C9B /* OMCMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCMovieCell.m; path = View/OMCMovieCell.m; sourceTree = "<group>"; };
 		2D3537011CBA899B00BB6C9B /* OMCSearchMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCSearchMovieView.h; path = View/OMCSearchMovieView.h; sourceTree = "<group>"; };
 		2D3537021CBA899B00BB6C9B /* OMCSearchMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCSearchMovieView.m; path = View/OMCSearchMovieView.m; sourceTree = "<group>"; };
+		2D3537051CBA96C300BB6C9B /* OMCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCImageView.h; path = View/OMCImageView.h; sourceTree = "<group>"; };
+		2D3537061CBA96C300BB6C9B /* OMCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCImageView.m; path = View/OMCImageView.m; sourceTree = "<group>"; };
 		2DC2437B1CB5F83A0048708B /* OMClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC2437F1CB5F83A0048708B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DC2438A1CB5F83A0048708B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		2D3536E01CBA77C200BB6C9B /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				2D3537041CBA967200BB6C9B /* View */,
 				2D3536E91CBA7A1C00BB6C9B /* Category */,
 				2D3536E11CBA77C200BB6C9B /* Manager */,
 				2D3536E41CBA77C200BB6C9B /* Model */,
@@ -210,6 +214,15 @@
 				2D3536F61CBA7C6D00BB6C9B /* OMCSearchMovieViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		2D3537041CBA967200BB6C9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D3537051CBA96C300BB6C9B /* OMCImageView.h */,
+				2D3537061CBA96C300BB6C9B /* OMCImageView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		2DC243721CB5F83A0048708B = {
@@ -399,6 +412,7 @@
 				2D3536EF1CBA7B5800BB6C9B /* OMCBaseViewController.m in Sources */,
 				2D3536B11CBA76E900BB6C9B /* OMCBaseModel.m in Sources */,
 				2D3536E81CBA77C200BB6C9B /* OMCAPIModel.m in Sources */,
+				2D3537071CBA96C300BB6C9B /* OMCImageView.m in Sources */,
 				2D3536F71CBA7C6D00BB6C9B /* OMCSearchMovieViewController.m in Sources */,
 				2D3536FD1CBA889F00BB6C9B /* OMCBaseTableViewCell.m in Sources */,
 				2D3536941CBA760300BB6C9B /* AppDelegate.m in Sources */,

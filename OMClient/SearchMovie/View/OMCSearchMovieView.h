@@ -10,4 +10,8 @@
 
 @interface OMCSearchMovieView : OMCBaseView
 
+@property (nonatomic, strong, readonly) UITextField *searchTextField;
+@property (nonatomic, strong, readonly) UIButton *clearButton;
+@property (nonatomic, strong, readonly) UITableView *tableView;
+
 @end

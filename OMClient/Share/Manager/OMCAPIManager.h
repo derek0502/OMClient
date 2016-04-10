@@ -46,8 +46,8 @@ typedef void (^DownloadImageFailureBlock)(NSData *data, NSError *error);
 
 #pragma mark - Download image by URL
 
-+ (NSURLSessionTask *)downloadImageWithUrl:(NSString *)url
-                                   success:(DownloadImageSuccessBlock)success
-                                   failure:(DownloadImageFailureBlock)failure;
++ (NSURLSessionDownloadTask *)downloadImageWithUrl:(NSString *)url
+										   success:(DownloadImageSuccessBlock)success
+										   failure:(DownloadImageFailureBlock)failure;
 
 @end

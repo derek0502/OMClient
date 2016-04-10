@@ -8,9 +8,15 @@
 
 #import "OMCMovieCell.h"
 
+// Manager
+#import "OMCAPIManager.h"
+
+// View
+#import "OMCImageView.h"
+
 @interface OMCMovieCell ()
 
-@property (nonatomic, strong) UIImageView *posterImageView;
+@property (nonatomic, strong) OMCImageView *posterImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *yearLabel;
 
@@ -24,6 +30,7 @@
 {
 	[super setup];
 
+	self.selectionStyle = UITableViewCellSelectionStyleNone;
 	[self setupPosterImageView];
 	[self setupNameLabel];
 	[self setupYearLabel];
@@ -31,9 +38,7 @@
 
 - (void)setupPosterImageView
 {
-	_posterImageView = [UIImageView new];
-
-	_posterImageView.contentMode = UIViewContentModeScaleAspectFill;
+	_posterImageView = [OMCImageView new];
 
 	[self.contentView addSubview:_posterImageView];
 }
@@ -96,7 +101,27 @@
 
 	[_yearLabel addLeftConstraintToView:_nameLabel relation:NSLayoutRelationEqual constant:0.0];
 	[_yearLabel addRightConstraintToView:_nameLabel relation:NSLayoutRelationEqual constant:0.0];
-	[_yearLabel addTopConstraintToView:_nameLabel attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:10.0];
+	[_yearLabel addTopConstraintToView:_nameLabel attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:0.0];
+}
+
+#pragma mark - Setter
+
+- (void)setModel:(OMCMovieModel *)model
+{
+	_model = model;
+
+	if (model) {
+
+		_nameLabel.text = _model.title;
+		_yearLabel.text = @(_model.year).stringValue;
+		_posterImageView.imageUrl = _model.poster;
+
+	} else {
+
+		_nameLabel.text = @"";
+		_yearLabel.text = @"";
+		_posterImageView.imageUrl = @"";
+	}
 }
 
 @end

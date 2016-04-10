@@ -75,6 +75,8 @@
 {
 	_tableView = [UITableView new];
 
+	_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 	[self addSubview:_tableView];
 }
 

@@ -8,6 +8,11 @@
 
 #import "OMCBaseTableViewCell.h"
 
+// Model
+#import "OMCMovieModel.h"
+
 @interface OMCMovieCell : OMCBaseTableViewCell
+
+@property (nonatomic, strong) OMCMovieModel *model;
 
 @end
