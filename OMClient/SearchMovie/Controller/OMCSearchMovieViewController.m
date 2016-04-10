@@ -122,6 +122,13 @@ static CGFloat const kMovieCellHeight = 132.0;
 	return kMovieCellHeight;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	OMCMovieModel *movie = [_searchResult.movies objectAtIndex:indexPath.row];
+
+	[self getMovieDetailById:movie.imdbID];
+}
+
 #pragma mark - <UITextFieldDelegate>
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -140,8 +147,6 @@ static CGFloat const kMovieCellHeight = 132.0;
 
 	return YES;
 }
-
-
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -186,6 +191,19 @@ static CGFloat const kMovieCellHeight = 132.0;
 - (BOOL)isSearching
 {
 	return _currentTask;
+}
+
+- (void)getMovieDetailById:(NSString *)imdbID
+{
+	[OMCAPIManager searchDetailWithId:imdbID
+							  success:^(NSData *data, OMCMovieDetailModel *dataModel)
+	 {
+
+	 }
+							  failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
+	 {
+		 
+	 }];
 }
 
 #pragma mark - Notifications
