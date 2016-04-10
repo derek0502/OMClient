@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+// Category
+#import "UIView+AutoLayoutHelper.h"
+
 @interface OMCBaseTableViewCell : UITableViewCell
 
 - (void)setup;
