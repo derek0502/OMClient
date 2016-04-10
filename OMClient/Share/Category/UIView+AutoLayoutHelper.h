@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+// Constant
+static CGFloat const kNormalHorizontalMargin = 30.0;
+static CGFloat const kNormalStatusBarHeight = 20.0;
+static CGFloat const kNormalNavigationBarHeight = 60.0;
+
 @interface UIView (AutoLayoutHelper)
 
 #pragma mark - Fill
