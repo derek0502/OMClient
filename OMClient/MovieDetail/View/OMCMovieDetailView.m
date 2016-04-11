@@ -24,6 +24,8 @@
 @property (nonatomic, strong) UIView *ratingView;
 @property (nonatomic, strong) UILabel *plotLabel;
 
+@property (nonatomic, strong) NSLayoutConstraint *contentHeightConstraint;
+
 @end
 
 @implementation OMCMovieDetailView
@@ -184,6 +186,7 @@
     [_contentView addTopConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
     [_contentView addWidthConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
     [_contentView addCenterYConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
+    _contentHeightConstraint = [_contentView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:3000.0];
 }
 
 - (void)setupPosterImageViewConstraints
@@ -233,7 +236,7 @@
     [_plotLabel addLeftConstraintToView:_plotLabel.superview relation:NSLayoutRelationEqual constant:kNormalHorizontalMargin];
     [_plotLabel addRightConstraintToView:_plotLabel.superview relation:NSLayoutRelationEqual constant:-kNormalHorizontalMargin];
     
-    [_plotLabel addBottomConstraintToView:_plotLabel.superview relation:NSLayoutRelationEqual constant:0.0];
+    [_plotLabel addBottomConstraintToView:_plotLabel.superview relation:NSLayoutRelationEqual constant:-30.0];
 }
 
 #pragma mark - Setters
@@ -256,6 +259,7 @@
     CGFloat contentWidth = [UIScreen mainScreen].bounds.size.width;
     
     _scrollView.contentSize = CGSizeMake(contentWidth, contentHeight);
+    _contentHeightConstraint.constant = contentHeight;
 }
 
 #pragma mark - Helpers
