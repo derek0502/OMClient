@@ -10,7 +10,6 @@
 
 @interface OMCLoadingView ()
 
-@property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 
 @end
@@ -23,16 +22,8 @@
 {
     [super setup];
     
-    [self setupBackgroundView];
+    self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
     [self setupIndicatorView];
-}
-
-- (void)setupBackgroundView
-{
-    _backgroundView = [[UIView alloc]init];
-    [_backgroundView setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5]];
-    
-    [self addSubview:_backgroundView];
 }
 
 - (void)setupIndicatorView
@@ -50,15 +41,7 @@
 {
     [super setupConstraints];
     
-    [self setupBackgroundViewConstraints];
     [self setupIndicatorViewConstraints];
-}
-
-- (void)setupBackgroundViewConstraints
-{
-    _backgroundView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [_backgroundView fillSuperView:UIEdgeInsetsZero];
 }
 
 - (void)setupIndicatorViewConstraints
