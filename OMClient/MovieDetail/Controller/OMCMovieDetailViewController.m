@@ -39,9 +39,17 @@
 - (void)loadView
 {
     self.view = [OMCMovieDetailView new];
+    self.view.dataSource = self.dataSource;
     
     // Back button
     [self.view.backButton addTarget:self action:@selector(backPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    [self.view updateContentSize];
 }
 
 #pragma mark - Actions

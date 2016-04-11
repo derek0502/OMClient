@@ -8,8 +8,14 @@
 
 #import "OMCBaseView.h"
 
+// Model
+#import "OMCMovieDetailModel.h"
+
 @interface OMCMovieDetailView : OMCBaseView
 
 @property (nonatomic, strong, readonly) UIButton *backButton;
+@property (nonatomic, strong) OMCMovieDetailModel *dataSource;
+
+- (void)updateContentSize;
 
 @end
