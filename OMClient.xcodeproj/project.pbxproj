@@ -28,6 +28,7 @@
 		2DC243DA1CBB5EF20048708B /* OMCMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243D91CBB5EF20048708B /* OMCMovieDetailViewController.m */; };
 		2DC243DE1CBB5F2E0048708B /* OMCMovieDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243DD1CBB5F2E0048708B /* OMCMovieDetailView.m */; };
 		2DC243E11CBB60B10048708B /* OMCNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243E01CBB60B10048708B /* OMCNavigationView.m */; };
+		2DC243E41CBB68630048708B /* OMCLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC243E31CBB68630048708B /* OMCLoadingView.m */; };
 		3A4D1FDBA92B9CB8AB9CD3C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		2DC243DD1CBB5F2E0048708B /* OMCMovieDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCMovieDetailView.m; path = View/OMCMovieDetailView.m; sourceTree = "<group>"; };
 		2DC243DF1CBB60B10048708B /* OMCNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCNavigationView.h; path = View/OMCNavigationView.h; sourceTree = "<group>"; };
 		2DC243E01CBB60B10048708B /* OMCNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCNavigationView.m; path = View/OMCNavigationView.m; sourceTree = "<group>"; };
+		2DC243E21CBB68630048708B /* OMCLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMCLoadingView.h; path = View/OMCLoadingView.h; sourceTree = "<group>"; };
+		2DC243E31CBB68630048708B /* OMCLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMCLoadingView.m; path = View/OMCLoadingView.m; sourceTree = "<group>"; };
 		75FDDE6991720192C2C21C89 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F608D60C4044E14267A0F58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FCE8B7DF19A4A94ECE7D2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +235,8 @@
 			children = (
 				2D3537051CBA96C300BB6C9B /* OMCImageView.h */,
 				2D3537061CBA96C300BB6C9B /* OMCImageView.m */,
+				2DC243E21CBB68630048708B /* OMCLoadingView.h */,
+				2DC243E31CBB68630048708B /* OMCLoadingView.m */,
 				2DC243DF1CBB60B10048708B /* OMCNavigationView.h */,
 				2DC243E01CBB60B10048708B /* OMCNavigationView.m */,
 			);
@@ -452,6 +457,7 @@
 				2D3536941CBA760300BB6C9B /* AppDelegate.m in Sources */,
 				2D3536B31CBA76E900BB6C9B /* OMCMovieModel.m in Sources */,
 				2D3536EC1CBA7A6000BB6C9B /* UIView+AutoLayoutHelper.m in Sources */,
+				2DC243E41CBB68630048708B /* OMCLoadingView.m in Sources */,
 				2D3536B21CBA76E900BB6C9B /* OMCMovieDetailModel.m in Sources */,
 				2D3537001CBA898800BB6C9B /* OMCMovieCell.m in Sources */,
 				2D3536B41CBA76E900BB6C9B /* OMCSearchModel.m in Sources */,

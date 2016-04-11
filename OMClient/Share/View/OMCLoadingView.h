@@ -1,5 +1,5 @@
 //
-//  OMCMovieDetailView.h
+//  OMCLoadingView.h
 //  OMClient
 //
 //  Created by Derek Cheung on 11/4/2016.
@@ -8,8 +8,6 @@
 
 #import "OMCBaseView.h"
 
-@interface OMCMovieDetailView : OMCBaseView
-
-@property (nonatomic, strong, readonly) UIButton *backButton;
+@interface OMCLoadingView : OMCBaseView
 
 @end

@@ -10,4 +10,10 @@
 
 @interface OMCBaseViewController : UIViewController
 
+#pragma mark - Loading
+
+- (void)startLoadingAnimation;
+
+- (void)stopLoadingAnimation;
+
 @end

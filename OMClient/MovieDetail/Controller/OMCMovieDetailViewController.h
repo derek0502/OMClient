@@ -8,6 +8,11 @@
 
 #import "OMCBaseViewController.h"
 
+// Model
+#import "OMCMovieDetailModel.h"
+
 @interface OMCMovieDetailViewController : OMCBaseViewController
+
+- (instancetype)initWithDataSource:(OMCMovieDetailModel *)dataSource;
 
 @end

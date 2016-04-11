@@ -69,6 +69,7 @@
     
     [_separatorView addLeftConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
     [_separatorView addRightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+    [_separatorView addBottomConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
     [_separatorView addTopConstraintToView:_contentView attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:0.0];
     [_separatorView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:4.0];
 }

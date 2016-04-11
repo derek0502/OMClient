@@ -18,6 +18,9 @@
 // Manager
 #import "OMCAPIManager.h"
 
+// Controller
+#import "OMCMovieDetailViewController.h"
+
 // Constant
 static CGFloat const kMovieCellHeight = 132.0;
 
@@ -139,7 +142,7 @@ static CGFloat const kMovieCellHeight = 132.0;
 		_delaySearchTimer = nil;
 	}
 
-	_delaySearchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+	_delaySearchTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
 														 target:self
 													   selector:@selector(performSearch)
 													   userInfo:nil
@@ -195,14 +198,23 @@ static CGFloat const kMovieCellHeight = 132.0;
 
 - (void)getMovieDetailById:(NSString *)imdbID
 {
+    [self startLoadingAnimation];
 	[OMCAPIManager searchDetailWithId:imdbID
 							  success:^(NSData *data, OMCMovieDetailModel *dataModel)
 	 {
-
+         OMCMovieDetailViewController *vc = [[OMCMovieDetailViewController alloc] initWithDataSource:dataModel];
+         dispatch_async(dispatch_get_main_queue(), ^
+         {
+             [self.navigationController pushViewController:vc animated:YES];
+             [self stopLoadingAnimation];
+         });
 	 }
 							  failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
 	 {
-		 
+         dispatch_async(dispatch_get_main_queue(), ^
+                        {
+                            [self stopLoadingAnimation];
+                        });
 	 }];
 }
 
