@@ -12,6 +12,7 @@
 #import "OMCNavigationView.h"
 #import "OMCImageView.h"
 #import "OMCProducersHeaderView.h"
+#import "OMCProducersContentView.h"
 
 @interface OMCMovieDetailView ()
 
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) UIView *ratingView;
 @property (nonatomic, strong) UILabel *plotLabel;
 @property (nonatomic, strong) OMCProducersHeaderView *producersHeaderView;
+@property (nonatomic, strong) OMCProducersContentView *producersContentView;
 
 @end
 
@@ -46,6 +48,7 @@
     [self setupRatingView];
     [self setupPlotLabel];
     [self setupProducersHeaderView];
+	[self setupProducersContentView];
 }
 
 - (void)setupNavigationView
@@ -138,6 +141,13 @@
     [_contentView addSubview:_producersHeaderView];
 }
 
+- (void)setupProducersContentView
+{
+	_producersContentView = [OMCProducersContentView new];
+
+	[_contentView addSubview:_producersContentView];
+}
+
 #pragma mark - Setup Constraints
 
 - (void)setupConstraints
@@ -154,6 +164,7 @@
     [self setupRatingViewConstraints];
     [self setupPlotLabelConstraints];
     [self setupProducersHeaderViewConstraints];
+	[self setupProducersContentViewConstraints];
 }
 
 - (void)setupNavigationViewConstraints
@@ -248,8 +259,16 @@
     [_producersHeaderView addLeftConstraintToView:_producersHeaderView.superview relation:NSLayoutRelationEqual constant:kNormalHorizontalMargin];
     [_producersHeaderView addRightConstraintToView:_producersHeaderView.superview relation:NSLayoutRelationEqual constant:-kNormalHorizontalMargin];
     [_producersHeaderView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:30.0];
-    
-    [_producersHeaderView addBottomConstraintToView:_producersHeaderView.superview relation:NSLayoutRelationEqual constant:-30.0];
+}
+
+- (void)setupProducersContentViewConstraints
+{
+	_producersContentView.translatesAutoresizingMaskIntoConstraints = NO;
+
+	[_producersContentView addTopConstraintToView:_producersHeaderView attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:10.0];
+	[_producersContentView addLeftConstraintToView:_producersContentView.superview relation:NSLayoutRelationEqual constant:0.0];
+	[_producersContentView addRightConstraintToView:_producersContentView.superview relation:NSLayoutRelationEqual constant:0.0];
+	[_producersContentView addBottomConstraintToView:_producersContentView.superview relation:NSLayoutRelationEqual constant:-30.0];
 }
 
 #pragma mark - Setters
@@ -262,6 +281,7 @@
     _titleLabel.text = [self titleString];
     _descriptionLabel.text = [self descriptionString];
     _plotLabel.text = _dataSource.plot;
+	_producersContentView.dataSource = _dataSource;
 }
 
 #pragma mark - Public
