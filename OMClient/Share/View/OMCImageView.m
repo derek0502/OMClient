@@ -39,6 +39,7 @@
 
 	_imageView.backgroundColor = [UIColor lightGrayColor];
 	_imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
 
 	[self addSubview:_imageView];
 }
@@ -81,7 +82,10 @@
 {
 	_imageView.translatesAutoresizingMaskIntoConstraints = NO;
 
-	[_imageView fillSuperView:UIEdgeInsetsZero];
+    [_imageView addWidthConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+    [_imageView addHeightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+    [_imageView addCenterXConstraintToView:self];
+    [_imageView addCenterYConstraintToView:self];
 }
 
 - (void)setupProgressViewConstraints
