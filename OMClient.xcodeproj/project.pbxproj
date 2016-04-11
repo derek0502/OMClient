@@ -127,10 +127,10 @@
 		2D35369F1CBA76E900BB6C9B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2D3536F01CBA7B7900BB6C9B /* OMCBaseView.h */,
-				2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */,
 				2D3536FB1CBA889F00BB6C9B /* OMCBaseTableViewCell.h */,
 				2D3536FC1CBA889F00BB6C9B /* OMCBaseTableViewCell.m */,
+				2D3536F01CBA7B7900BB6C9B /* OMCBaseView.h */,
+				2D3536F11CBA7B7900BB6C9B /* OMCBaseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				2D3536F41CBA7C3700BB6C9B /* Controller */,
-				2D3536F31CBA7C3100BB6C9B /* View */,
 				2D3536A51CBA76E900BB6C9B /* Model */,
+				2D3536F31CBA7C3100BB6C9B /* View */,
 			);
 			path = SearchMovie;
 			sourceTree = "<group>";
@@ -178,10 +178,10 @@
 		2D3536E01CBA77C200BB6C9B /* Share */ = {
 			isa = PBXGroup;
 			children = (
-				2D3537041CBA967200BB6C9B /* View */,
 				2D3536E91CBA7A1C00BB6C9B /* Category */,
 				2D3536E11CBA77C200BB6C9B /* Manager */,
 				2D3536E41CBA77C200BB6C9B /* Model */,
+				2D3537041CBA967200BB6C9B /* View */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -216,10 +216,10 @@
 		2D3536F31CBA7C3100BB6C9B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2D3537011CBA899B00BB6C9B /* OMCSearchMovieView.h */,
-				2D3537021CBA899B00BB6C9B /* OMCSearchMovieView.m */,
 				2D3536FE1CBA898800BB6C9B /* OMCMovieCell.h */,
 				2D3536FF1CBA898800BB6C9B /* OMCMovieCell.m */,
+				2D3537011CBA899B00BB6C9B /* OMCSearchMovieView.h */,
+				2D3537021CBA899B00BB6C9B /* OMCSearchMovieView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
