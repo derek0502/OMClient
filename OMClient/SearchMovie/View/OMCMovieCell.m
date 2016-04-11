@@ -118,10 +118,26 @@
 
 	} else {
 
-		_nameLabel.text = @"";
-		_yearLabel.text = @"";
-		_posterImageView.imageUrl = @"";
+        [self resetCell];
 	}
+}
+
+#pragma mark - Helpers
+
+- (void)resetCell
+{
+    _nameLabel.text = @"";
+    _yearLabel.text = @"";
+    _posterImageView.imageUrl = @"";
+}
+
+#pragma mark - Override
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    
+    [self resetCell];
 }
 
 @end
