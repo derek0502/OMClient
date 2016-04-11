@@ -24,8 +24,6 @@
 @property (nonatomic, strong) UIView *ratingView;
 @property (nonatomic, strong) UILabel *plotLabel;
 
-@property (nonatomic, strong) NSLayoutConstraint *contentHeightConstraint;
-
 @end
 
 @implementation OMCMovieDetailView
@@ -69,6 +67,7 @@
     _scrollView = [UIScrollView new];
     
     _scrollView.scrollEnabled = YES;
+    _scrollView.alwaysBounceVertical = YES;
     
     [self addSubview:_scrollView];
 }
@@ -185,8 +184,7 @@
     
     [_contentView addTopConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
     [_contentView addWidthConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
-    [_contentView addCenterYConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
-    _contentHeightConstraint = [_contentView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:3000.0];
+    [_contentView addCenterXConstraintToView:_contentView.superview relation:NSLayoutRelationEqual constant:0.0];
 }
 
 - (void)setupPosterImageViewConstraints
@@ -196,7 +194,7 @@
     [_posterImageView addTopConstraintToView:_posterImageView.superview relation:NSLayoutRelationEqual constant:0.0];
     [_posterImageView addLeftConstraintToView:_posterImageView.superview relation:NSLayoutRelationEqual constant:0.0];
     [_posterImageView addRightConstraintToView:_posterImageView.superview relation:NSLayoutRelationEqual constant:0.0];
-    [_posterImageView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:300.0];
+    [_posterImageView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:350.0];
 }
 
 - (void)setupTitleLabelConstraints
@@ -259,7 +257,6 @@
     CGFloat contentWidth = [UIScreen mainScreen].bounds.size.width;
     
     _scrollView.contentSize = CGSizeMake(contentWidth, contentHeight);
-    _contentHeightConstraint.constant = contentHeight;
 }
 
 #pragma mark - Helpers
@@ -271,7 +268,7 @@
 
 - (NSString *)descriptionString
 {
-    return [NSString stringWithFormat:@"%@ | %@\n%@min | %d", _dataSource.genre, _dataSource.rated, _dataSource.runtime, (int)_dataSource.year];
+    return [NSString stringWithFormat:@"%@ | %@\n%@ | %d", _dataSource.genre, _dataSource.rated, _dataSource.runtime, (int)_dataSource.year];
 }
 
 @end
