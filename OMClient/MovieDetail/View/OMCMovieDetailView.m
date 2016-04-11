@@ -90,11 +90,9 @@
 {
     _titleLabel = [UILabel new];
     
-    _titleLabel.font = [UIFont boldSystemFontOfSize:30.0];
-    _titleLabel.numberOfLines = 0;
-    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _titleLabel.font = [UIFont boldSystemFontOfSize:25.0];
     _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - kNormalHorizontalMargin * 2;
+    [self generalConfigWithLabel:_titleLabel];
     
     [_contentView addSubview:_titleLabel];
 }
@@ -105,9 +103,7 @@
     
     _descriptionLabel.textColor = [UIColor lightGrayColor];
     _descriptionLabel.font = [UIFont systemFontOfSize:10.0];
-    _descriptionLabel.numberOfLines = 0;
-    _descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    _descriptionLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - kNormalHorizontalMargin * 2;
+    [self generalConfigWithLabel:_descriptionLabel];
     
     [_contentView addSubview:_descriptionLabel];
 }
@@ -126,10 +122,8 @@
     _plotLabel = [UILabel new];
     
     _plotLabel.font = [UIFont systemFontOfSize:15.0];
-    _plotLabel.numberOfLines = 0;
-    _plotLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _plotLabel.textColor = [UIColor blackColor];
-    _plotLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - kNormalHorizontalMargin * 2;
+    [self generalConfigWithLabel:_plotLabel];
     
     [_contentView addSubview:_plotLabel];
 }
@@ -269,6 +263,13 @@
 - (NSString *)descriptionString
 {
     return [NSString stringWithFormat:@"%@ | %@\n%@ | %d", _dataSource.genre, _dataSource.rated, _dataSource.runtime, (int)_dataSource.year];
+}
+
+- (void)generalConfigWithLabel:(UILabel *)label
+{
+    label.numberOfLines = 0;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - kNormalHorizontalMargin * 2;
 }
 
 @end
