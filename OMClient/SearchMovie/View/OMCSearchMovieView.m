@@ -10,7 +10,7 @@
 
 @interface OMCSearchMovieView ()
 
-@property (nonatomic, strong) UIView *searchContainerView;
+@property (nonatomic, strong) UIView *navigationView;
 @property (nonatomic, strong) UITextField *searchTextField;
 @property (nonatomic, strong) UIButton *clearButton;
 @property (nonatomic, strong) UIView *separatorView;
@@ -27,7 +27,7 @@
 {
 	[super setup];
 
-	[self setupSearchContainerView];
+	[self setupNavigationView];
 	[self setupSearchTextField];
 	[self setupClearButton];
 	[self setupSeparatorView];
@@ -35,11 +35,11 @@
 	[self setupDismissKeyboardButton];
 }
 
-- (void)setupSearchContainerView
+- (void)setupNavigationView
 {
-	_searchContainerView = [UIView new];
+	_navigationView = [UIView new];
 
-	[self addSubview:_searchContainerView];
+	[self addSubview:_navigationView];
 }
 
 - (void)setupSearchTextField
@@ -51,7 +51,7 @@
 	_searchTextField.textColor = [UIColor blackColor];
 	_searchTextField.tintColor = [UIColor grayColor];
 
-	[_searchContainerView addSubview:_searchTextField];
+	[_navigationView addSubview:_searchTextField];
 }
 
 - (void)setupClearButton
@@ -61,7 +61,7 @@
 	UIImage *image = [UIImage imageNamed:@"delete"];
 	[_clearButton setImage:image forState:UIControlStateNormal];
 
-	[_searchContainerView addSubview:_clearButton];
+	[_navigationView addSubview:_clearButton];
 }
 
 - (void)setupSeparatorView
@@ -98,7 +98,7 @@
 {
 	[super setupConstraints];
 
-	[self setupSearchContainerViewConstraints];
+	[self setupNavigationViewConstraints];
 	[self setupSearchTextFieldConstraints];
 	[self setupClearButtonConstraints];
 	[self setupSeparatorViewConstraints];
@@ -106,22 +106,22 @@
 	[self setupDismissKeyboardButtonConstraints];
 }
 
-- (void)setupSearchContainerViewConstraints
+- (void)setupNavigationViewConstraints
 {
-	_searchContainerView.translatesAutoresizingMaskIntoConstraints = NO;
+	_navigationView.translatesAutoresizingMaskIntoConstraints = NO;
 
-	[_searchContainerView addTopConstraintToView:self relation:NSLayoutRelationEqual constant:kNormalStatusBarHeight];
-	[_searchContainerView addLeftConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
-	[_searchContainerView addRightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
-	[_searchContainerView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:kNormalNavigationBarHeight];
+	[_navigationView addTopConstraintToView:self relation:NSLayoutRelationEqual constant:kNormalStatusBarHeight];
+	[_navigationView addLeftConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+	[_navigationView addRightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
+	[_navigationView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:kNormalNavigationBarHeight];
 }
 
 - (void)setupSearchTextFieldConstraints
 {
 	_searchTextField.translatesAutoresizingMaskIntoConstraints = NO;
 
-	[_searchTextField addLeftConstraintToView:_searchContainerView relation:NSLayoutRelationEqual constant:kNormalHorizontalMargin];
-	[_searchTextField addCenterYConstraintToView:_searchContainerView];
+	[_searchTextField addLeftConstraintToView:_navigationView relation:NSLayoutRelationEqual constant:kNormalHorizontalMargin];
+	[_searchTextField addCenterYConstraintToView:_navigationView];
 }
 
 - (void)setupClearButtonConstraints
@@ -129,8 +129,8 @@
 	_clearButton.translatesAutoresizingMaskIntoConstraints = NO;
 
 	[_clearButton addLeftConstraintToView:_searchTextField attribute:NSLayoutAttributeRight relation:NSLayoutRelationEqual constant:15.0];
-	[_clearButton addCenterYConstraintToView:_searchContainerView];
-	[_clearButton addRightConstraintToView:_searchContainerView relation:NSLayoutRelationEqual constant:-kNormalHorizontalMargin];
+	[_clearButton addCenterYConstraintToView:_navigationView];
+	[_clearButton addRightConstraintToView:_navigationView relation:NSLayoutRelationEqual constant:-kNormalHorizontalMargin];
 	[_clearButton setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
 }
 
@@ -140,7 +140,7 @@
 
 	[_separatorView addLeftConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
 	[_separatorView addRightConstraintToView:self relation:NSLayoutRelationEqual constant:0.0];
-	[_separatorView addTopConstraintToView:_searchContainerView attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:0.0];
+	[_separatorView addTopConstraintToView:_navigationView attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:0.0];
 	[_separatorView addHeightConstraintWithRelation:NSLayoutRelationEqual constant:4.0];
 }
 
