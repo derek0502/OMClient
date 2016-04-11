@@ -28,7 +28,7 @@
 
 - (void)setupIndicatorView
 {
-    _indicatorView = [[UIActivityIndicatorView alloc] init];
+    _indicatorView = [UIActivityIndicatorView new];
     
     [_indicatorView startAnimating];
     
