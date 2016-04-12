@@ -113,7 +113,7 @@ static CGFloat const kMovieCellHeight = 132.0;
 {
 	OMCMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:[OMCMovieCell reuseIdentifier]];
 
-	cell.model = [_searchResult.movies objectAtIndex:indexPath.row];
+    [cell setModel:[_searchResult.movies objectAtIndex:indexPath.row] searchText:self.view.searchTextField.text];
 
 	return cell;
 }

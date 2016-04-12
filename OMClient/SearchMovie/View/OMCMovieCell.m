@@ -19,6 +19,8 @@
 @property (nonatomic, strong) OMCImageView *posterImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *yearLabel;
+@property (nonatomic, strong) OMCMovieModel *model;
+@property (nonatomic, strong) NSString *searchText;
 
 @end
 
@@ -104,15 +106,16 @@
 	[_yearLabel addTopConstraintToView:_nameLabel attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual constant:0.0];
 }
 
-#pragma mark - Setter
+#pragma mark - Public
 
-- (void)setModel:(OMCMovieModel *)model
+- (void)setModel:(OMCMovieModel *)model searchText:(NSString *)string
 {
 	_model = model;
+    _searchText = string;
 
 	if (model) {
 
-		_nameLabel.text = _model.title;
+        [self updateNameLabel];
 		_yearLabel.text = @(_model.year).stringValue;
 		_posterImageView.imageUrl = _model.poster;
 
@@ -127,8 +130,32 @@
 - (void)resetCell
 {
     _nameLabel.text = @"";
+    _nameLabel.attributedText = nil;
     _yearLabel.text = @"";
     _posterImageView.imageUrl = @"";
+    _searchText = @"";
+}
+
+- (void)updateNameLabel
+{
+    NSRange redRange = [_model.title rangeOfString:_searchText];
+    
+    if (redRange.location != NSNotFound) {
+        
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:_model.title];
+        
+        NSDictionary *attrs  = @{
+                                 NSForegroundColorAttributeName: [UIColor redColor]
+                                 };
+        
+        [attrString setAttributes:attrs range:redRange];
+        
+        _nameLabel.attributedText = attrString;
+        
+    } else {
+        
+        _nameLabel.text = _model.title;
+    }
 }
 
 #pragma mark - Override

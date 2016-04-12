@@ -13,6 +13,6 @@
 
 @interface OMCMovieCell : OMCBaseTableViewCell
 
-@property (nonatomic, strong) OMCMovieModel *model;
+- (void)setModel:(OMCMovieModel *)model searchText:(NSString *)string;
 
 @end
