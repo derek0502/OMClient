@@ -11,6 +11,7 @@
 // View
 #import "OMCSearchMovieView.h"
 #import "OMCMovieCell.h"
+#import "OMCSearchMovieHeaderView.h"
 
 // Model
 #import "OMCSearchModel.h"
@@ -23,6 +24,7 @@
 
 // Constant
 static CGFloat const kMovieCellHeight = 132.0;
+static CGFloat const kTableViewHeaderViewHeight = 60.0;
 
 @interface OMCSearchMovieViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -30,6 +32,7 @@ static CGFloat const kMovieCellHeight = 132.0;
 @property (nonatomic, strong) OMCSearchModel *searchResult;
 @property (nonatomic, strong) NSTimer *delaySearchTimer;
 @property (nonatomic, strong) NSURLSessionTask *currentTask;
+@property (nonatomic, strong) OMCSearchMovieHeaderView *headerView;
 
 @end
 
@@ -88,6 +91,7 @@ static CGFloat const kMovieCellHeight = 132.0;
 - (void)clearPressed:(UIButton *)sender
 {
 	self.view.searchTextField.text = @"";
+    [self performSearch];
 }
 
 - (void)dismissKeyboardPressed:(UIButton *)sender
@@ -132,6 +136,16 @@ static CGFloat const kMovieCellHeight = 132.0;
 	[self getMovieDetailById:movie.imdbID];
 }
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kTableViewHeaderViewHeight;
+}
+
 #pragma mark - <UITextFieldDelegate>
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -167,26 +181,52 @@ static CGFloat const kMovieCellHeight = 132.0;
 		[_currentTask cancel];
 		_currentTask = nil;
 	}
-	_currentTask = [OMCAPIManager searchWithTitle:self.view.searchTextField.text
-											 page:1
-										  success:^(NSData *data, OMCSearchModel *dataModel)
-					{
-						_searchResult = dataModel;
-						_currentTask = nil;
-						[self reloadInMainQueue];
-					}
-										  failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
-					{
-						_searchResult = nil;
-						_currentTask = nil;
-						[self reloadInMainQueue];
-					}];
+    
+    if ([self.view.searchTextField.text length] == 0) {
+        
+        self.headerView.status = OMCSearchMovieHeaderViewStatusStartNewSearch;
+        _searchResult = nil;
+       [self.view.tableView reloadData];
+        
+    } else if ([self.view.searchTextField.text length] == 1) {
+        
+        self.headerView.status = OMCSearchMovieHeaderViewStatusTooManyResults;
+        _searchResult = nil;
+        [self.view.tableView reloadData];
+        
+    } else {
+        
+        self.headerView.status = OMCSearchMovieHeaderViewStatusSearching;
+    
+        _currentTask = [OMCAPIManager searchWithTitle:self.view.searchTextField.text
+                                                 page:1
+                                              success:^(NSData *data, OMCSearchModel *dataModel)
+                        {
+                            _searchResult = dataModel;
+                            _currentTask = nil;
+                            [self reloadInMainQueue];
+                        }
+                                              failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
+                        {
+                            _searchResult = nil;
+                            _currentTask = nil;
+                            [self reloadInMainQueue];
+                        }];
+    }
 }
 
 - (void)reloadInMainQueue
 {
 	dispatch_async(dispatch_get_main_queue(), ^
 				   {
+                       if (_searchResult) {
+                           
+                           self.headerView.status = OMCSearchMovieHeaderViewStatusNormal;
+                           
+                       } else {
+                           
+                           self.headerView.status = OMCSearchMovieHeaderViewStatusNoResult;
+                       }
 					   [self.view.tableView reloadData];
 				   });
 }
@@ -229,6 +269,18 @@ static CGFloat const kMovieCellHeight = 132.0;
 - (void)keyboardWillHide:(NSNotification *)notification
 {
 	self.view.dismissKeyboardButton.hidden = YES;
+}
+
+#pragma mark - Accessors
+
+- (OMCSearchMovieHeaderView *)headerView
+{
+    if (!_headerView) {
+        
+        _headerView = [OMCSearchMovieHeaderView new];
+    }
+    
+    return _headerView;
 }
 
 @end
