@@ -12,6 +12,7 @@
 #import "OMCSearchMovieView.h"
 #import "OMCMovieCell.h"
 #import "OMCSearchMovieHeaderView.h"
+#import "OMCSearchMovieFooterView.h"
 
 // Model
 #import "OMCSearchModel.h"
@@ -25,14 +26,19 @@
 // Constant
 static CGFloat const kMovieCellHeight = 132.0;
 static CGFloat const kTableViewHeaderViewHeight = 60.0;
+static CGFloat const kTableViewFooterViewHeight = 40.0;
 
-@interface OMCSearchMovieViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface OMCSearchMovieViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, OMCSearchMovieFooterViewDelegate>
 
 @property (nonatomic, strong) OMCSearchMovieView *view;
-@property (nonatomic, strong) OMCSearchModel *searchResult;
 @property (nonatomic, strong) NSTimer *delaySearchTimer;
 @property (nonatomic, strong) NSURLSessionTask *currentTask;
 @property (nonatomic, strong) OMCSearchMovieHeaderView *headerView;
+@property (nonatomic, strong) OMCSearchMovieFooterView *footerView;
+@property (nonatomic, strong) NSMutableArray<OMCMovieModel *> *dataSource;
+@property (nonatomic, strong) NSString *currentSearch;
+@property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) NSInteger totalResults;
 
 @end
 
@@ -103,21 +109,14 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if (_searchResult) {
-
-		return _searchResult.movies.count;
-
-	} else {
-
-		return 0;
-	}
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	OMCMovieCell *cell = [tableView dequeueReusableCellWithIdentifier:[OMCMovieCell reuseIdentifier]];
 
-    [cell setModel:[_searchResult.movies objectAtIndex:indexPath.row] searchText:self.view.searchTextField.text];
+    [cell setModel:[self.dataSource objectAtIndex:indexPath.row] searchText:self.view.searchTextField.text];
 
 	return cell;
 }
@@ -131,7 +130,7 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	OMCMovieModel *movie = [_searchResult.movies objectAtIndex:indexPath.row];
+	OMCMovieModel *movie = [self.dataSource objectAtIndex:indexPath.row];
 
 	[self getMovieDetailById:movie.imdbID];
 }
@@ -144,6 +143,30 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return kTableViewHeaderViewHeight;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if ([self shouldShowFooter]) {
+        
+        return self.footerView;
+        
+    } else {
+        
+        return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if ([self shouldShowFooter]) {
+        
+        return kTableViewFooterViewHeight;
+        
+    } else {
+        
+        return 0.0001;
+    }
 }
 
 #pragma mark - <UITextFieldDelegate>
@@ -182,44 +205,53 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
 		_currentTask = nil;
 	}
     
+    if (![_currentSearch isEqualToString:self.view.searchTextField.text]) {
+        
+        [self.dataSource removeAllObjects];
+        _currentPage = 0;
+        _totalResults = 0;
+    }
+    
     if ([self.view.searchTextField.text length] == 0) {
         
         self.headerView.status = OMCSearchMovieHeaderViewStatusStartNewSearch;
-        _searchResult = nil;
        [self.view.tableView reloadData];
         
     } else if ([self.view.searchTextField.text length] == 1) {
         
         self.headerView.status = OMCSearchMovieHeaderViewStatusTooManyResults;
-        _searchResult = nil;
         [self.view.tableView reloadData];
         
     } else {
         
         self.headerView.status = OMCSearchMovieHeaderViewStatusSearching;
-    
+        self.footerView.status = OMCSearchMovieFooterViewStatusLoading;
+        _currentPage++;
         _currentTask = [OMCAPIManager searchWithTitle:self.view.searchTextField.text
-                                                 page:1
+                                                 page:_currentPage
                                               success:^(NSData *data, OMCSearchModel *dataModel)
                         {
-                            _searchResult = dataModel;
                             _currentTask = nil;
+                            _totalResults = dataModel.totalResults;
+                            [self.dataSource addObjectsFromArray:dataModel.movies];
                             [self reloadInMainQueue];
                         }
                                               failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
                         {
-                            _searchResult = nil;
                             _currentTask = nil;
+                            [self.dataSource removeAllObjects];
                             [self reloadInMainQueue];
                         }];
     }
+    
+    _currentSearch = self.view.searchTextField.text;
 }
 
 - (void)reloadInMainQueue
 {
 	dispatch_async(dispatch_get_main_queue(), ^
 				   {
-                       if (_searchResult) {
+                       if (self.dataSource.count) {
                            
                            self.headerView.status = OMCSearchMovieHeaderViewStatusNormal;
                            
@@ -227,6 +259,9 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
                            
                            self.headerView.status = OMCSearchMovieHeaderViewStatusNoResult;
                        }
+                       
+                       self.footerView.status = OMCSearchMovieFooterViewStatusNormal;
+                       
 					   [self.view.tableView reloadData];
 				   });
 }
@@ -259,6 +294,11 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
 	 }];
 }
 
+- (BOOL)shouldShowFooter
+{
+    return (self.dataSource.count < _totalResults);
+}
+
 #pragma mark - Notifications
 
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -281,6 +321,34 @@ static CGFloat const kTableViewHeaderViewHeight = 60.0;
     }
     
     return _headerView;
+}
+
+- (OMCSearchMovieFooterView *)footerView
+{
+    if (!_footerView) {
+        
+        _footerView = [OMCSearchMovieFooterView new];
+        _footerView.delegate = self;
+    }
+    
+    return _footerView;
+}
+
+- (NSMutableArray<OMCMovieModel *> *)dataSource
+{
+    if (!_dataSource) {
+        
+        _dataSource = [NSMutableArray new];
+    }
+    
+    return _dataSource;
+}
+
+#pragma mark - <OMCSearchMovieFooterViewDelegate>
+
+- (void)viewDidTap:(OMCSearchMovieFooterView *)view
+{
+    [self performSearch];
 }
 
 @end

@@ -67,9 +67,10 @@
 
 - (void)setupTableView
 {
-	_tableView = [UITableView new];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
 
-	_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [UIColor whiteColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 	[self addSubview:_tableView];
 }
