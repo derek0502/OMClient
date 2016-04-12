@@ -184,6 +184,8 @@ static CGFloat const kTableViewFooterViewHeight = 40.0;
 													   selector:@selector(performSearch)
 													   userInfo:nil
 														repeats:NO];
+    
+    self.headerView.status = OMCSearchMovieHeaderViewStatusSearching;
 
 	return YES;
 }
