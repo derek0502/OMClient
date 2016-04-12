@@ -111,7 +111,7 @@ static CGFloat const kRatingLabelFontSize = 10.0;
 
 - (void)updateRatingImageViews
 {
-    NSInteger numberOfStar = _rating / 2;
+    NSInteger numberOfStar = lroundf(_rating / 2.0);
     
     for (int i = 0 ; i < kTotalNumberOfStar ; i++) {
         
