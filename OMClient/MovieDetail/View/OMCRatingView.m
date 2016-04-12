@@ -10,6 +10,7 @@
 
 // Constant
 static NSInteger const kTotalNumberOfStar = 5;
+static CGFloat const kRatingLabelFontSize = 10.0;
 
 @interface OMCRatingView ()
 
@@ -48,7 +49,7 @@ static NSInteger const kTotalNumberOfStar = 5;
     _ratingLabel = [UILabel new];
     
     _ratingLabel.textColor = [UIColor lightGrayColor];
-    _ratingLabel.font = [UIFont systemFontOfSize:10.0];
+    _ratingLabel.font = [UIFont systemFontOfSize:kRatingLabelFontSize];
     
     [self addSubview:_ratingLabel];
 }
@@ -128,7 +129,20 @@ static NSInteger const kTotalNumberOfStar = 5;
 
 - (void)updateRatingLabel
 {
-    _ratingLabel.text = [NSString stringWithFormat:@"Ratings: %.1f/10", _rating];
+    NSString *boldString = [NSString stringWithFormat:@"%.1f/10", _rating];
+    NSString *fullString = [NSString stringWithFormat:@"Ratings: %@", boldString];
+    
+    NSRange boldRange = [fullString rangeOfString:boldString];
+    
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:fullString];
+    
+    NSDictionary *attrs  = @{
+                             NSFontAttributeName: [UIFont boldSystemFontOfSize:kRatingLabelFontSize]
+                             };
+    
+    [attrString setAttributes:attrs range:boldRange];
+     
+    _ratingLabel.attributedText = attrString;
 }
 
 @end
