@@ -16,4 +16,8 @@
 
 - (void)stopLoadingAnimation;
 
+#pragma mark - Alert
+
+- (void)showGeneralAlertWithText:(NSString *)text;
+
 @end

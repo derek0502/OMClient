@@ -43,6 +43,13 @@
     
     // Back button
     [self.view.backButton addTarget:self action:@selector(backPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Share button
+    [self.view.shareButton addTarget:self action:@selector(sharePressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Like button
+    [self.view.likeButton addTarget:self action:@selector(likePressed:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)viewDidLayoutSubviews
@@ -57,6 +64,16 @@
 - (void)backPressed:(UIButton *)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)sharePressed:(UIButton *)sender
+{
+    [self showGeneralAlertWithText:@"Coming soon😁"];
+}
+
+- (void)likePressed:(UIButton *)sender
+{
+    [self showGeneralAlertWithText:@"Coming soon😁"];
 }
 
 @end

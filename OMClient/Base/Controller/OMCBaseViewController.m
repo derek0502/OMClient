@@ -42,4 +42,21 @@
     }
 }
 
+#pragma mark - Alert
+
+- (void)showGeneralAlertWithText:(NSString *)text
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops"
+                                                                             message:text
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:nil];
+    
+    [alertController addAction:defaultAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 @end

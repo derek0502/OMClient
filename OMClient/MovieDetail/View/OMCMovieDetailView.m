@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) OMCNavigationView *navigationView;
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UIButton *shareButton;
+@property (nonatomic, strong) UIButton *likeButton;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) OMCImageView *posterImageView;
@@ -41,6 +43,8 @@
     
     [self setupNavigationView];
     [self setupBackButton];
+    [self setupShareButton];
+    [self setupLikeButton];
     [self setupScrollView];
     [self setupContentView];
     [self setupPosterImageView];
@@ -67,6 +71,26 @@
     [_backButton setImage:image forState:UIControlStateNormal];
     
     [_navigationView.contentView addSubview:_backButton];
+}
+
+- (void)setupShareButton
+{
+    _shareButton = [UIButton new];
+    
+    UIImage *image = [UIImage imageNamed:@"share"];
+    [_shareButton setImage:image forState:UIControlStateNormal];
+    
+    [_navigationView.contentView addSubview:_shareButton];
+}
+
+- (void)setupLikeButton
+{
+    _likeButton = [UIButton new];
+    
+    UIImage *image = [UIImage imageNamed:@"favourite"];
+    [_likeButton setImage:image forState:UIControlStateNormal];
+    
+    [_navigationView.contentView addSubview:_likeButton];
 }
 
 - (void)setupScrollView
@@ -155,6 +179,8 @@
     
     [self setupNavigationViewConstraints];
     [self setupBackButtonConstraints];
+    [self setupShareButtonConstraints];
+    [self setupLikeButtonConstraints];
     [self setupScrollViewConstraints];
     [self setupContentViewConstraints];
     [self setupPosterImageViewConstraints];
@@ -181,6 +207,22 @@
     
     [_backButton addLeftConstraintToView:_backButton.superview relation:NSLayoutRelationEqual constant:kNormalHorizontalMargin];
     [_backButton addCenterYConstraintToView:_backButton.superview];
+}
+
+- (void)setupShareButtonConstraints
+{
+    _shareButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [_shareButton addCenterYConstraintToView:_shareButton.superview];
+}
+
+- (void)setupLikeButtonConstraints
+{
+    _likeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [_likeButton addLeftConstraintToView:_shareButton attribute:NSLayoutAttributeRight relation:NSLayoutRelationEqual constant:kNormalHorizontalMargin];
+    [_likeButton addRightConstraintToView:_likeButton.superview relation:NSLayoutRelationEqual constant:-kNormalHorizontalMargin];
+    [_likeButton addCenterYConstraintToView:_likeButton.superview];
 }
 
 - (void)setupScrollViewConstraints

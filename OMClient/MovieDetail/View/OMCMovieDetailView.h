@@ -14,6 +14,8 @@
 @interface OMCMovieDetailView : OMCBaseView
 
 @property (nonatomic, strong, readonly) UIButton *backButton;
+@property (nonatomic, strong, readonly) UIButton *shareButton;
+@property (nonatomic, strong, readonly) UIButton *likeButton;
 @property (nonatomic, strong) OMCMovieDetailModel *dataSource;
 
 - (void)updateContentSize;
