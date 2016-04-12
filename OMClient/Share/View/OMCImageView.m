@@ -118,10 +118,13 @@
 	}
 
 	if ([imageUrl length] > 0) {
-
-        _noImageLabel.hidden = YES;
-        [_progressView startAnimating];
-		_progressView.hidden = NO;
+        
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           _noImageLabel.hidden = YES;
+                           [_progressView startAnimating];
+                           _progressView.hidden = NO;
+                       });
 		
 		_currentTask = [OMCAPIManager downloadImageWithUrl:imageUrl
 												   success:^(NSData *imageData)
