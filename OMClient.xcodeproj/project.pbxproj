@@ -230,12 +230,12 @@
 			children = (
 				2D3536FE1CBA898800BB6C9B /* OMCMovieCell.h */,
 				2D3536FF1CBA898800BB6C9B /* OMCMovieCell.m */,
-				2D3537011CBA899B00BB6C9B /* OMCSearchMovieView.h */,
-				2D3537021CBA899B00BB6C9B /* OMCSearchMovieView.m */,
-				2DC243EB1CBCB0F70048708B /* OMCSearchMovieHeaderView.h */,
-				2DC243EC1CBCB0F70048708B /* OMCSearchMovieHeaderView.m */,
 				2DC243F11CBCD77D0048708B /* OMCSearchMovieFooterView.h */,
 				2DC243F21CBCD77D0048708B /* OMCSearchMovieFooterView.m */,
+				2DC243EB1CBCB0F70048708B /* OMCSearchMovieHeaderView.h */,
+				2DC243EC1CBCB0F70048708B /* OMCSearchMovieHeaderView.m */,
+				2D3537011CBA899B00BB6C9B /* OMCSearchMovieView.h */,
+				2D3537021CBA899B00BB6C9B /* OMCSearchMovieView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
