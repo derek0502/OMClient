@@ -268,7 +268,7 @@ static CGFloat const kTableViewFooterViewHeight = 40.0;
 
 - (BOOL)isSearching
 {
-	return _currentTask;
+	return (_currentTask != nil);
 }
 
 - (void)getMovieDetailById:(NSString *)imdbID

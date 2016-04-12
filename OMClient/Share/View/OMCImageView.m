@@ -119,9 +119,10 @@
 
 	if ([imageUrl length] > 0) {
 
+        _noImageLabel.hidden = YES;
+        [_progressView startAnimating];
 		_progressView.hidden = NO;
-		[_progressView startAnimating];
-		_noImageLabel.hidden = YES;
+		
 		_currentTask = [OMCAPIManager downloadImageWithUrl:imageUrl
 												   success:^(NSData *imageData)
 						{
@@ -162,7 +163,7 @@
 					   _imageView.image = image;
 					   _progressView.hidden = YES;
 					   [_progressView stopAnimating];
-					   _noImageLabel.hidden = image;
+					   _noImageLabel.hidden = (image != nil);
 				   });
 }
 
