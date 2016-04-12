@@ -11,6 +11,7 @@
 // View
 #import "OMCNavigationView.h"
 #import "OMCImageView.h"
+#import "OMCRatingView.h"
 #import "OMCProducersHeaderView.h"
 #import "OMCProducersContentView.h"
 
@@ -23,7 +24,7 @@
 @property (nonatomic, strong) OMCImageView *posterImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *descriptionLabel;
-@property (nonatomic, strong) UIView *ratingView;
+@property (nonatomic, strong) OMCRatingView *ratingView;
 @property (nonatomic, strong) UILabel *plotLabel;
 @property (nonatomic, strong) OMCProducersHeaderView *producersHeaderView;
 @property (nonatomic, strong) OMCProducersContentView *producersContentView;
@@ -116,9 +117,7 @@
 
 - (void)setupRatingView
 {
-    _ratingView = [UIView new];
-    
-    _ratingView.backgroundColor = [UIColor grayColor];
+    _ratingView = [OMCRatingView new];
     
     [_contentView addSubview:_ratingView];
 }
@@ -280,6 +279,7 @@
     _posterImageView.imageUrl = _dataSource.poster;
     _titleLabel.text = [self titleString];
     _descriptionLabel.text = [self descriptionString];
+    _ratingView.rating = _dataSource.imdbRating;
     _plotLabel.text = _dataSource.plot;
 	_producersContentView.dataSource = _dataSource;
 }
