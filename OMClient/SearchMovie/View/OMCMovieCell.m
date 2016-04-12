@@ -138,7 +138,7 @@
 
 - (void)updateNameLabel
 {
-    NSRange redRange = [_model.title rangeOfString:_searchText];
+    NSRange redRange = [_model.title.lowercaseString rangeOfString:_searchText.lowercaseString];
     
     if (redRange.location != NSNotFound) {
         

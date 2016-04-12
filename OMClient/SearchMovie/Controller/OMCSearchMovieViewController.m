@@ -142,7 +142,7 @@ static CGFloat const kMovieCellHeight = 132.0;
 		_delaySearchTimer = nil;
 	}
 
-	_delaySearchTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+	_delaySearchTimer = [NSTimer scheduledTimerWithTimeInterval:0.3
 														 target:self
 													   selector:@selector(performSearch)
 													   userInfo:nil
