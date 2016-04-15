@@ -229,20 +229,22 @@ static CGFloat const kTableViewFooterViewHeight = 40.0;
         self.headerView.status = OMCSearchMovieHeaderViewStatusSearching;
         self.footerView.status = OMCSearchMovieFooterViewStatusLoading;
         _currentPage++;
+        
+        __weak typeof(self) weakSelf = self;
         _currentTask = [OMCAPIManager searchWithTitle:self.view.searchTextField.text
                                                  page:_currentPage
                                               success:^(NSData *data, OMCSearchModel *dataModel)
                         {
                             _currentTask = nil;
                             _totalResults = dataModel.totalResults;
-                            [self.dataSource addObjectsFromArray:dataModel.movies];
-                            [self reloadInMainQueue];
+                            [weakSelf.dataSource addObjectsFromArray:dataModel.movies];
+                            [weakSelf reloadInMainQueue];
                         }
                                               failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
                         {
                             _currentTask = nil;
-                            [self.dataSource removeAllObjects];
-                            [self reloadInMainQueue];
+                            [weakSelf.dataSource removeAllObjects];
+                            [weakSelf reloadInMainQueue];
                         }];
     }
     
@@ -251,20 +253,21 @@ static CGFloat const kTableViewFooterViewHeight = 40.0;
 
 - (void)reloadInMainQueue
 {
+    __weak typeof(self) weakSelf = self;
 	dispatch_async(dispatch_get_main_queue(), ^
 				   {
-                       if (self.dataSource.count) {
+                       if (weakSelf.dataSource.count) {
                            
-                           self.headerView.status = OMCSearchMovieHeaderViewStatusNormal;
+                           weakSelf.headerView.status = OMCSearchMovieHeaderViewStatusNormal;
                            
                        } else {
                            
-                           self.headerView.status = OMCSearchMovieHeaderViewStatusNoResult;
+                           weakSelf.headerView.status = OMCSearchMovieHeaderViewStatusNoResult;
                        }
                        
-                       self.footerView.status = OMCSearchMovieFooterViewStatusNormal;
+                       weakSelf.footerView.status = OMCSearchMovieFooterViewStatusNormal;
                        
-					   [self.view.tableView reloadData];
+					   [weakSelf.view.tableView reloadData];
 				   });
 }
 
@@ -276,22 +279,24 @@ static CGFloat const kTableViewFooterViewHeight = 40.0;
 - (void)getMovieDetailById:(NSString *)imdbID
 {
     [self startLoadingAnimation];
+    
+    __weak typeof(self) weakSelf = self;
 	[OMCAPIManager searchDetailWithId:imdbID
 							  success:^(NSData *data, OMCMovieDetailModel *dataModel)
 	 {
          OMCMovieDetailViewController *vc = [[OMCMovieDetailViewController alloc] initWithDataSource:dataModel];
          dispatch_async(dispatch_get_main_queue(), ^
          {
-             [self.navigationController pushViewController:vc animated:YES];
-             [self stopLoadingAnimation];
+             [weakSelf.navigationController pushViewController:vc animated:YES];
+             [weakSelf stopLoadingAnimation];
          });
 	 }
 							  failure:^(NSData *data, NSError *error, OMCAPIModel *dataModel)
 	 {
          dispatch_async(dispatch_get_main_queue(), ^
                         {
-                            [self showGeneralAlertWithText:@"Cannot not find its details😭"];
-                            [self stopLoadingAnimation];
+                            [weakSelf showGeneralAlertWithText:@"Cannot not find its details😭"];
+                            [weakSelf stopLoadingAnimation];
                         });
 	 }];
 }

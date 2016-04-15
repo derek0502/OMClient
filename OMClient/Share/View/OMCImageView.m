@@ -126,14 +126,15 @@
                            _progressView.hidden = NO;
                        });
 		
+        __weak typeof(self) weakSelf = self;
 		_currentTask = [OMCAPIManager downloadImageWithUrl:imageUrl
 												   success:^(NSData *imageData)
 						{
-							[self setImageWithData:imageData];
+							[weakSelf setImageWithData:imageData];
 						}
 												   failure:^(NSData *data, NSError *error)
 						{
-							[self setImageWithData:nil];
+							[weakSelf setImageWithData:nil];
 						}];
 	} else {
 
